@@ -71,11 +71,20 @@ function montaTd(dado, classe) {
     return td;
 }
 
+// validações dos dados do paciente
 function validaPaciente(paciente) {
 
+    // é chamado de array de erros, neste caso
+    // ele permite alocar vários erros conforme 
+    // eles passarem nas validações
     var erros = [];
 
+    // validação de nome em branco
+    // se paciente tiver valor maior que 0, significa que possui
+    // algum erro
     if (paciente.nome.length == 0) {
+        // a propriedade push serve para colocar alguma informação
+        // dentro do array
         erros.push("O nome não pode ser em branco");
     }
 
