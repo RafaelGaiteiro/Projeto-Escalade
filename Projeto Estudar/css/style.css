@@ -6,13 +6,23 @@ header {
             rgba(0, 212, 255, 1) 100%);
 }
 
-.caixa ul li h1 img {
-
-    display: inline;
-
-    padding: 3%;
-    margin: 3%;
+.coluna {
+    float: left;
+    width: 33.33%;
 }
+
+.coluna img {
+    width: 90%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
 
 .caixa {
     position: relative;
