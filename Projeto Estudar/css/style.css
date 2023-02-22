@@ -1,0 +1,48 @@
+header {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 83, 121, 1) 35%,
+            rgba(0, 212, 255, 1) 100%);
+}
+
+.caixa ul li h1 img {
+
+    display: inline;
+
+    padding: 3%;
+    margin: 3%;
+}
+
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.logo_deatec {
+    width: 25%;
+}
+
+.logo_m8sistemas {
+    width: 20%;
+}
