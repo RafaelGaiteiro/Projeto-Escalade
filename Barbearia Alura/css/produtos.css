@@ -1,0 +1,126 @@
+header {
+  /* Cor de background */
+  background: #bbbbbb;
+  /* distância interna, é a distância do objeto para a sua borda */
+  padding: 20px 0;
+  /* Ordem das propridades ajustadas: topo, direira, baixo, esquerda */
+}
+
+.caixa {
+  /* posição relativa ao ponto inicial em que se encontra o objeto */
+  position: relative;
+  /* largura */
+  width: 940px;
+  /* distância externa, é a distância da borda para o que está fora */
+  margin: 0 auto;
+  /* auto significa que será ajustado proporcionalmente */
+}
+
+nav {
+  position: absolute;
+  /* distância do topo */
+  top: 110px;
+  /* distância da lateral direira */
+  right: 0;
+}
+
+/* Aplica as propriedades a todos os <li> que estiverem
+dentro da <nav>  */
+nav li {
+  /* determina que o objeto preenche apenas o seu tamanho */
+  display: inline;
+  margin: 0 0 0 15px;
+}
+
+/* Aplica as propriedades a todos os <a> que estiverem
+dentro da <nav>  */
+nav a {
+  /* tranforma todas as letras do texto em MAIÚSCULAS */
+  text-transform: uppercase;
+  /* determina a cor do texto */
+  color: #000000;
+  /* determina o peso/espessura da fonte, neste caso negrito */
+  font-weight: bold;
+  /* tamanho da fonte */
+  font-size: 22px;
+  /* remove as decorações do deste, neste caso o sublinhado padrão aplicado a tag de links <a> */
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #c78c19;
+  text-decoration: underline;
+}
+
+.produtos {
+  width: 940px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.produtos li {
+  /*  */
+  display: inline-block;
+  /* Alinha o texto ao centro */
+  text-align: center;
+  width: 30%;
+  /* alinha o objeto através do seu topo, por padrão
+  ele é alinhado pela linha de baixo */
+  vertical-align: top;
+  margin: 0 1.5%;
+  padding: 30px 20px;
+  /* o conteúdo do elemento se comporta de acordo com a largura em percentual criada  */
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  /* arredonda a borda */
+  border-radius: 10px;
+}
+
+/* Aplica a propriedade hover a todos os <li> que estiverem dentro
+da classe produto
+A propriedade hover é acionada quando o ponteiro passa por cima da estrutura */
+.produtos li:hover {
+  border-color: #c78c19;
+}
+
+/* Aplica a propriedade hover a todos os <li> que estiverem dentro
+da classe produto
+A propriedade active é acionada quando o ponteiro clica na estrutura */
+.produtos li:active {
+  border-color: #088c19;
+}
+
+.produtos li:hover h2 {
+  font-size: 34px;
+}
+
+.produtos h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.produto-descricao {
+  font-size: 18px;
+}
+
+.produto-preco {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  /* imagem adicionada para servir de fundo para um objeto,
+	trata-se de uma imagem pequena e leve que o navegador replica
+	várias vezes automaticamente para preencher todo o objeto.
+	Desta forma ele não pesa o navegador.  */
+  background-image: url("../img/bg.jpg");
+  padding: 40px 0;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 20px 0 0;
+}

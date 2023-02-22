@@ -1,0 +1,125 @@
+/* Anotações:
+
+  o elemento se torna tanto block quanto inline
+  display: inline-block;
+
+  configura a largura, neste caso mantém a proporção da altura
+  width: 20%;
+
+  define o tamanho da margem ao lado direito
+  margin-right: 15%;
+
+  alinha com o topo do objeto ao lado
+  vertical-align: top;
+
+*/
+
+/* Código organizado */
+
+body {
+  /* fonte */
+  font-family: Roboto;
+  /* fundo */
+  background: black;
+  /* cor da fonte */
+  color: aliceblue;
+  /* cria sobra nos textos */
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+}
+
+div {
+  /* distância interna entre o objeto e a borda */
+  padding: 30px;
+  margin-left: 150px;
+  /* ajusta o tamanho da fonte*/
+  font-size: 35px;
+}
+
+div li {
+  padding: 10px;
+}
+
+div h4, h3 {
+    padding: 10px;
+
+}
+
+.divLister li {
+}
+
+header {
+  /* cor de fundo do header */
+  background: rgba(240, 248, 255, 0.3);
+  /* distância interna entre o objeto e a borda superior */
+  padding-top: 40px;
+  /* distância interna entre o objeto e a borda inferior */
+  padding-bottom: 30px;
+  /* centraliza o texto */
+  text-align: center;
+}
+
+.caixa {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+}
+nav {
+  position: static;
+  margin-top: 4%;
+  right: 0;
+}
+nav li {
+  display: inline;
+  /* topo | direita | baixo | esquerda */
+  margin: 0 0 0 15px;
+}
+
+nav a {
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.teste_hover {
+  text-align: center;
+}
+.teste_hover:hover p {
+  font-size: 60px;
+  color: red;
+}
+
+.teste_active {
+  text-align: center;
+}
+
+.teste_active:active p {
+  font-size: 60px;
+  color: red;
+}
+
+.logo_header {
+  width: 30%;
+}
+
+footer {
+  text-align: center;
+  background-image: url("../img_index/footer_background.jfif");
+  padding: 40px 0;
+}
+
+.logo_footer {
+  width: 10%;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 20px 0 0;
+}

@@ -1,0 +1,76 @@
+<!-- Estrutura padrão que determina a versão HTML5 -->
+<!DOCTYPE html>
+<!-- Estrura que diz ao navegador que este é um código HTML e determina o idioma -->
+<html lang="pt-br">
+  <!-- Informações que são repassadas ao navegador, como links de referência,
+	fontes, entre outros -->
+
+  <head>
+    <!-- Informa o dicionário que o navegador deve utilizar, quais tipos de letras,
+		simbolos, entre outros -->
+    <meta charset="UTF-8" />
+    <!-- Título exibido na guia do navegador -->
+    <title>Barbearia Alura</title>
+    <!-- Referência do arquivo CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <!-- São as informações que serão exibidas na página -->
+
+  <body>
+    <!-- É uma divisão do site dedica ao cabeçalho -->
+    <header>
+      <!-- o <h1> serve para dizer que esse texto/conteúdo tem uma certa
+			importância e deverá aparecer maior/exibida ao usuário -->
+      <h1 class="titulo-principal">Barbearia Alura</h1>
+    </header>
+    <!-- Imagem que compõem o banner da página -->
+    <img id="banner" src="img/banner.jpg" />
+    <!-- Div nomeada de principal, pode ser substituída pela tag <main> que
+			é uma divisão dedicada ao conteúdo principal da página -->
+    <div class="principal">
+      <!-- Esse conteúdo de texto está com a tag <h2> por sua importância em aparecer
+				para o usuário é menor do que a <h1>, e assim por diante... -->
+      <h2 class="titulo-centralizado">Sobre a Barbearia Alura</h2>
+      <!-- <p> Parágrafo
+		<strong> - deixa o texto em negrito -->
+      <p>
+        Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz
+        para o mercado o que há de melhor para o seu cabelo e barba. Fundada em
+        2019, a Barbearia Alura já é destaque na cidade e conquista novos
+        clientes a cada dia.
+      </p>
+
+      <p id="missao">
+        <!-- <em> - enfase, deixa o texto em parecido com itálico -->
+        <em
+          >Nossa missão é:
+          <strong
+            >"Proporcionar auto-estima e qualidade de vida aos clientes"</strong
+          >.</em
+        >
+      </p>
+
+      <p>
+        Oferecemos profissionais experientes e antenados às mudanças no mundo da
+        moda. O atendimento possui padrão de excelência e agilidade, garantindo
+        qualidade e satisfação dos nossos clientes.
+      </p>
+    </div>
+
+    <div class="beneficios">
+      <!-- <h3> - texto/conteúdo com menor nível de importância -->
+      <h3 class="titulo-centralizado">Benefícios</h3>
+      <!-- <ul> - tag usada para indicar uma lista não ordenada
+		<ol> - tag usada para indicar uma lista ordenada
+		<li> - item dentro da lista -->
+      <ul>
+        <li class="itens">Atendimento aos Clientes</li>
+        <li class="itens">Espaço diferenciado</li>
+        <li class="itens">Localização</li>
+        <li class="itens">Profissionais Qualificados</li>
+      </ul>
+
+      <img src="img/beneficios.jpg" class="imagembeneficios" />
+    </div>
+  </body>
+</html>
