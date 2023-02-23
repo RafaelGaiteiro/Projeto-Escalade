@@ -8,11 +8,23 @@
     <!-- Referência CSS -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <!-- Fontes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>Projeto de Estudo</title>
 </head>
 
 <body>
-    <header></header>
+    <header>
+
+            <h1><img class="logo_m8sistemas" src="img/logo_m8sistemas.png" /></h1>
+            <h1><img class="logo_deatec" src="img/logo_deatec.png"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Cadastro de Dispositivos</a></li>
+                </ul>
+            </nav>
+        
+    </header>
     <main>
         <section class="container">
             <h2>Cadastro de Dispositivos Portáveis</h2>
@@ -50,35 +62,39 @@
         <form id="form-adiciona">
             <div class="grupo">
                 <label for="marca">Marca:</label>
-                <input id="marca" name="marca" type="text" placeholder="digite a marca do dispositivo">
+                <input id="marca" name="marca" type="text" placeholder="digite a marca do dispositivo" class="campo">
             </div>
             <div class="grupo">
                 <label for="modelo">Marca:</label>
-                <input id="modelo" name="modelo" type="text" placeholder="digite o modelo do dispositivo">
+                <input id="modelo" name="modelo" type="text" placeholder="digite o modelo do dispositivo" class="campo">
             </div>
             <div class="grupo">
                 <label for="ram">RAM:</label>
-                <input id="ram" name="ram" type="text" placeholder="digite a quantidade de RAM do dispositivo">
+                <input id="ram" name="ram" type="text" placeholder="digite a quantidade de RAM do dispositivo"
+                    class="campo">
             </div>
             <div class="grupo">
                 <label for="armazenamento">Armazenamento:</label>
                 <input id="armazenamento" name="armazenamento" type="text"
-                    placeholder="digite a quantidade de Armazenamento do dispositivo">
+                    placeholder="digite a quantidade de Armazenamento do dispositivo" class="campo">
             </div>
             <div class="grupo">
                 <label for="condicao">Marca:</label>
-                <input id="condicao" name="condicao" type="text" placeholder="digite a condicao do dispositivo">
+                <input id="condicao" name="condicao" type="text" placeholder="digite a condicao do dispositivo"
+                    class="campo">
             </div>
             <button id="adicionar-dispositivo" class="botao bto-principal">Adicionar</button>
         </form>
     </section>
-    <footer></footer>
-    <!-- Referência JS -->
-    <script src="js/calcula-imc.js"></script>
+    <footer>
+        <video src="video/logo_rafael.mp4"></video>
+        <p class="copyright">&copy; Copyright Cadastro de Dispositivos - 2023</p>
+    </footer>
+    <script src="js/calcula-valor.js"></script>
     <script src="js/form.js"></script>
-    <script src="js/remover-paciente.js"></script>
+    <script src="js/remover-dispositivo.js"></script>
     <script src="js/filtra.js"></script>
-    <script src="js/buscar-pacientes.js"></script>
+    <script src="js/buscar-dispositivos.js"></script>
 
 </body>
 
