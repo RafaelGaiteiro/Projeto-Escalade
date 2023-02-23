@@ -23,17 +23,17 @@ nav a {
 	font-size: 22px;
 	text-decoration: none;
 	background-color: aliceblue;
-	border-radius: 4px;
-	color: #00755c;
-	padding: 5px;
+	color: black;
+	border-radius: 15px;
+	padding: 10px 8px 10px 8px;
 }
 
 nav a:hover {
-	background-color: #00755c;
-	color: aliceblue;
-	border: solid 2px aliceblue;
-	border-radius: 4px;
-	padding: 5px;
+	background-color: rgba(240, 248, 255);
+	color: black;
+	border-radius: 15px;
+	padding: 10px 8px 10px 8px;
+	opacity: 80%;
 }
 
 .logo_m8sistemas {
@@ -175,3 +175,16 @@ button:disabled {
 .invisivel {
 	display: none;
 }
+
+footer {
+	background: #004443;
+	text-align: center;
+	padding: 80px;
+  }
+
+  .copyright {
+	color: #ffffff;
+	font-size: 13px;
+	margin: 20px 0 0;
+  }
+  
