@@ -1,129 +1,106 @@
-// atribui a variável botaoAdicionar o #acicionar-paciente do HTML
-// através do document.querySelector
-var botaoAdicionar = document.querySelector("#adicionar-paciente");
-// quando o botãoAdicionar sofrer um evento do tipo click
-// através do .addEventListener executará a função anônima
-// que tem como parâmetro o (event)
-botaoAdicionar.addEventListener("click", function(event) {
-    // não executa o procedimento padrão do navegador ao clicar no botão
-    // o procedimento padrão para o botão de um form é reccaregar a página
-    // e limpar os dados
-    event.preventDefault();
+var botaoAdicionar = document.querySelector("#adicionar-dispositivo");
 
-    var form = document.querySelector("#form-adiciona");
+botaoAdicionar.addEventListener("click", function (event) {
+  event.preventDefault();
 
-    // atribui a variável paciente as informações repassadas pela function
-    // obtemPacienteDoFormulario que pega as informações do paciente através
-    // do form no HTML
-    var paciente = obtemPacienteDoFormulario(form);
+  var form = document.querySelector("#form-adiciona");
 
-    // atribui a variável erros a function validaPaciente
-    var erros = validaPaciente(paciente);
+  var dispositivo = obtemDispositivoDoFormulario(form);
 
-    // validação
-    // se o comprimento total de erros for maior que 0...
-    if (erros.length > 0) {
-        exibeMensagensDeErro(erros);
+  // function validaDispositivo armazena erros de validação na var erros
+  var erros = validaDispositivo(dispositivo);
 
-        return;
-    }
+  // para passar na validação o comprimento de erros precisa ser 0
+  if (erros.length > 0) {
+    exibeMensagensDeErro(erros);
+    return;
+  }
+  adicionaDispositivoNaTabela(dispositivo);
+  form.reset();
 
-    adicionaPacienteNaTabela(paciente);
-
-    form.reset();
-
-    var mensagensErro = document.querySelector("#mensagens-erro");
-    mensagensErro.innerHTML = "";
-
+  var mensagensErro = document.querySelector("#mensagens-erro");
+  mensagensErro.innerHTML = "";
 });
 
-function obtemPacienteDoFormulario(form) {
+function obtemDispositivoDoFormulario(form) {
+  var dispositivo = {
+    marca: form.marca.value,
+    modelo: form.modelo.value,
+    ram: form.ram.value,
+    armazenamento: form.armazenamento.value,
+    // rever condicao: calculaValor(form.peso.value, form.altura.value),
+  };
 
-    var paciente = {
-        nome: form.nome.value,
-        peso: form.peso.value,
-        altura: form.altura.value,
-        gordura: form.gordura.value,
-        imc: calculaImc(form.peso.value, form.altura.value)
-    }
-
-    return paciente;
+  return dispositivo;
 }
 
-function montaTr(paciente) {
-    var pacienteTr = document.createElement("tr");
-    pacienteTr.classList.add("paciente");
+function montaTr(dispositivo) {
+  var dispositivoTr = document.createElement("tr");
+  dispositivoTr.classList.add("dispositivo");
 
-    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
-    pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
-    pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
-    pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
-    pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
+  dispositivoTr.appendChild(montaTd(dispositivo.marca, "info-nome"));
+  dispositivoTr.appendChild(montaTd(dispositivo.modelo, "info-peso"));
+  dispositivoTr.appendChild(montaTd(dispositivo.ram, "info-altura"));
+  dispositivoTr.appendChild(montaTd(dispositivo.armazenamento, "info-gordura"));
+  dispositivoTr.appendChild(montaTd(dispositivo.avaliacao, "info-avaliacao"));
 
-    return pacienteTr;
+  return dispositivoTr;
 }
 
 function montaTd(dado, classe) {
-    var td = document.createElement("td");
-    td.classList.add(classe);
-    td.textContent = dado;
+  var td = document.createElement("td");
+  td.classList.add(classe);
+  td.textContent = dado;
 
-    return td;
+  return td;
 }
 
-// validações dos dados do paciente
-function validaPaciente(paciente) {
+function validaDispositivo(dispositivo) {
+  var erros = [];
 
-    // é chamado de array de erros, neste caso
-    // ele permite alocar vários erros conforme 
-    // eles passarem nas validações
-    var erros = [];
+  if (dispositivo.marca.length == 0) {
+    erros.push("A marca não pode estar em branco");
+  }
 
-    // validação de nome em branco
-    // se paciente tiver valor maior que 0, significa que possui
-    // algum erro
-    if (paciente.nome.length == 0) {
-        // a propriedade push serve para colocar alguma informação
-        // dentro do array
-        erros.push("O nome não pode ser em branco");
-    }
+  if (dispositivo.modelo.length == 0) {
+    erros.push("O modelo não pode estar em branco");
+  }
 
-    if (paciente.gordura.length == 0) {
-        erros.push("A gordura não pode ser em branco");
-    }
+  if (dispositivo.ram.length == 0) {
+    erros.push("A quantidade de RAM não pode estar em branco");
+  }
 
-    if (paciente.peso.length == 0) {
-        erros.push("O peso não pode ser em branco");
-    }
+  if (dispositivo.armazenamento.length == 0) {
+    erros.push("A quantidade de armazenamento não pode estar em branco");
+  }
 
-    if (paciente.altura.length == 0) {
-        erros.push("A altura não pode ser em branco");
-    }
+  /*
+  // rever
+  if (!validaPeso(paciente.peso)) {
+    erros.push("Peso é inválido");
+  }
 
-    if (!validaPeso(paciente.peso)) {
-        erros.push("Peso é inválido");
-    }
+  if (!validaAltura(paciente.altura)) {
+    erros.push("Altura é inválida");
+  }
+  */
 
-    if (!validaAltura(paciente.altura)) {
-        erros.push("Altura é inválida");
-    }
-
-    return erros;
+  return erros;
 }
 
 function exibeMensagensDeErro(erros) {
-    var ul = document.querySelector("#mensagens-erro");
-    ul.innerHTML = "";
+  var ul = document.querySelector("#mensagens-erro");
+  ul.innerHTML = "";
 
-    erros.forEach(function(erro) {
-        var li = document.createElement("li");
-        li.textContent = erro;
-        ul.appendChild(li);
-    });
+  erros.forEach(function (erro) {
+    var li = document.createElement("li");
+    li.textContent = erro;
+    ul.appendChild(li);
+  });
 }
 
-function adicionaPacienteNaTabela(paciente) {
-    var pacienteTr = montaTr(paciente);
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
+function adicionaDispositivoNaTabela(dispositivo) {
+  var dispositivoTr = montaTr(dispositivo);
+  var tabela = document.querySelector("#tabela-dispositivos");
+  tabela.appendChild(dispositivoTr);
 }
