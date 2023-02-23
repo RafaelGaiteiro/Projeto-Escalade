@@ -18,31 +18,29 @@ for (var i = 0; i < dispositivos.length; i++) {
     var tdCondicao = dispositivo.querySelector(".info-condicao");
     var condicao = tdCondicao.textContent;
 
-    // rever var tdImc = paciente.querySelector(".info-imc");
+    var tdAvaliacao = dispositivo.querySelector(".info-avaliacao");
 
     // atribui a var o retur V ou F da function que valida a ram e o armazenamento
     var ramEhValido = validaRam(ram);
-    var armazenamentoEhValida = validaArmazenamento(armazenamento);
+    var armazenamentoEhValido = validaArmazenamento(armazenamento);
 
-    // se pesoEhValido não for V, ou seja, se ele for F, então...
-    if (!pesoEhValido) {
-        // imprime no console
-        console.log("Peso inválido!");
-        // atribui a pesoEhValido um F
-        pesoEhValido = false;
-        // atribui o texto como conteúdo de texto da tdImd
-        tdImc.textContent = "Peso inválido";
-        // adiciona a class paciente-invalido (que altera a cor) ao paciente
-        paciente.classList.add("paciente-invalido");
+    // se não for V então...
+    if (!ramEhValido) {
+        console.log("Ram inválida!");
+        ramEhValido = false;
+        tdCondicao.textContent = "Está quantidade de RAM não é aceita";
+        // adiciona a class dispositivo-invalido (que altera a cor) ao dispositivo
+        dispositivo.classList.add("dispositivo-invalido");
     }
 
-    if (!alturaEhValida) {
-        console.log("Altura inválida!");
-        alturaEhValida = false;
-        tdImc.textContent = "Altura inválida";
-        paciente.classList.add("paciente-invalido");
+    if (!armazenamentoEhValida) {
+        console.log("Armazenamento inválido!");
+        armazenamentoEhValido = false;
+        tdCondicao.textContent = "Está quantidade de Armazenamento não é aceito";
+        dispositivo.classList.add("dispositivo-invalido");
     }
 
+    // rever funcionalidade!!!
     if (pesoEhValido && alturaEhValida) {
         // atribui a var imc o return da function calculaImc
         // com parâmetros peso e altura

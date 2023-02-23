@@ -8,9 +8,10 @@ body {
 }
 
 header {
-	background: #004443;
+	background: rgb(0,46,52);
+	background: linear-gradient(90deg, rgba(0,46,52,1) 50%, rgba(233,233,233,1) 80%);
 	border-bottom: 10px solid #00755c;
-	height: 150px;
+	height: 210px;
 	margin-bottom: 50px;
 	text-align: center;
 }
@@ -153,7 +154,7 @@ button:disabled {
 	border: 1px solid red;
 }
 
-.paciente-invalido {
+.dispositivo-invalido {
 	background-color: lightcoral;
 }
 
@@ -180,11 +181,10 @@ footer {
 	background: #004443;
 	text-align: center;
 	padding: 80px;
-  }
+}
 
-  .copyright {
+.copyright {
 	color: #ffffff;
 	font-size: 13px;
 	margin: 20px 0 0;
-  }
-  
+}
