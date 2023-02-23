@@ -1,40 +1,28 @@
-// atribui a varv titulo através do .querySelector o .titulo do HTML
-var titulo = document.querySelector(".titulo");
-// atribui um texto como conteúdo de texto a var titulo
-titulo.textContent = "Aparecida Nutricionista";
+var dispositivos = document.querySelectorAll(".dispositivo");
 
-// atribui a var pacientes os .paciente
-// neste caso o .paciente é uma <tr> composta por várias <td> (cada <td> é um paciente)
-// então ele trás todos pacientes de uma só vez e atribui a uma variável só
-var pacientes = document.querySelectorAll(".paciente");
+for (var i = 0; i < dispositivos.length; i++) {
+    var dispositivo = dispositivos[i];
 
-// laço de repetição
-// início; condição de permanência; incremento
-// inicializa em 0, permanece até atingir o comprimento máximo, acrescenta de um em um
-// a propridade .lenght permite que o loop siga todo o comprimento da variável, neste caso
-// não sendo nessário colocar um valor específico
-for (var i = 0; i < pacientes.length; i++) {
-    // atribui a var paciente o pacientes conforme o seu índice
-    var paciente = pacientes[i];
+    var tdMarca = dispositivo.querySelector(".info-marca");
+    var marca = tdMarca.textContent;
 
-    // querySelector -> busca do HTML
-    // e atribui a uma variável a sua informação
-    var tdPeso = paciente.querySelector(".info-peso");
-    // atribui para var peso o texto da tdPeso que acabamos
-    // de pegar a informação do HTML
-    var peso = tdPeso.textContent;
-    // o .textContent pega apenas o conteúdo de texto
-    // daquela estrutura do HTML
+    var tdModelo = dispositivo.querySelector(".info-modelo");
+    var modelo = tdModelo.textContent;
 
-    var tdAltura = paciente.querySelector(".info-altura");
-    var altura = tdAltura.textContent;
+    var tdRam = dispositivo.querySelector(".info-dispositivo");
+    var ram = tdRam.textContent;
 
-    var tdImc = paciente.querySelector(".info-imc");
+    var tdArmazenamento =  dispositivo.querySelector(".info-armazenamento");
+    var armazenamento = tdArmazenamento.textContent;
 
-    // atribui a var o retorno da function que valida o peso e a altura
-    // esse retorno é V ou F
-    var pesoEhValido = validaPeso(peso);
-    var alturaEhValida = validaAltura(altura);
+    var tdCondicao = dispositivo.querySelector(".info-condicao");
+    var condicao = tdCondicao.textContent;
+
+    // rever var tdImc = paciente.querySelector(".info-imc");
+
+    // atribui a var o retur V ou F da function que valida a ram e o armazenamento
+    var ramEhValido = validaRam(ram);
+    var armazenamentoEhValida = validaArmazenamento(armazenamento);
 
     // se pesoEhValido não for V, ou seja, se ele for F, então...
     if (!pesoEhValido) {

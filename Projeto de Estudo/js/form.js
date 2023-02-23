@@ -28,6 +28,7 @@ function obtemDispositivoDoFormulario(form) {
     modelo: form.modelo.value,
     ram: form.ram.value,
     armazenamento: form.armazenamento.value,
+    condicao: form.condicao.value,
     // rever condicao: calculaValor(form.peso.value, form.altura.value),
   };
 
@@ -38,10 +39,11 @@ function montaTr(dispositivo) {
   var dispositivoTr = document.createElement("tr");
   dispositivoTr.classList.add("dispositivo");
 
-  dispositivoTr.appendChild(montaTd(dispositivo.marca, "info-nome"));
-  dispositivoTr.appendChild(montaTd(dispositivo.modelo, "info-peso"));
-  dispositivoTr.appendChild(montaTd(dispositivo.ram, "info-altura"));
-  dispositivoTr.appendChild(montaTd(dispositivo.armazenamento, "info-gordura"));
+  dispositivoTr.appendChild(montaTd(dispositivo.marca, "info-marca"));
+  dispositivoTr.appendChild(montaTd(dispositivo.modelo, "info-modelo"));
+  dispositivoTr.appendChild(montaTd(dispositivo.ram, "info-ram"));
+  dispositivoTr.appendChild(montaTd(dispositivo.armazenamento, "info-armazenamento"));
+  dispositivoTr.appendChild(montaTd(dispositivo.condicao, "info-condicao"));
   dispositivoTr.appendChild(montaTd(dispositivo.avaliacao, "info-avaliacao"));
 
   return dispositivoTr;
@@ -72,6 +74,10 @@ function validaDispositivo(dispositivo) {
 
   if (dispositivo.armazenamento.length == 0) {
     erros.push("A quantidade de armazenamento não pode estar em branco");
+  }
+
+  if (dispositivo.condicao.length == 0) {
+    erros.push("A condição do dispositivo não pode estar em branco");
   }
 
   /*
