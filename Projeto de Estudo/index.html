@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Referência CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Projeto de Estudo</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section class="container">
+            <h2>Cadastro de Dispositivos Portáveis</h2>
+            <label for="filtrar-tabela">Filtro:</label>
+            <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o modelo do dispositivo">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>RAM</th>
+                        <th>Armazenamento</th>
+                        <th>Condição</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-dispositivos">
+                    <tr class="dispositivos" id="dispositivo-exemplo">
+                        <td class="info-marca">Samsung</td>
+                        <td class="info-modelo">S22</td>
+                        <td class="info-RAM">8</td>
+                        <td class="info-armazenamento">128</td>
+                        <td class="info-condicao">Novo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+
+            <button id="buscar-dispositivos" class="botao bto-principal">Buscar Dispositivos</button>
+        </section>
+    </main>
+    <section class="container">
+        <h2 id="titulo-form">Adicionar novo dispositivo</h2>
+        <ul id="mensagens-erro"></ul>
+        <form id="form-adiciona">
+            <div class="grupo">
+                <label for="marca">Marca:</label>
+                <input id="marca" name="marca" type="text" placeholder="digite a marca do dispositivo">
+            </div>
+            <div class="grupo">
+                <label for="modelo">Marca:</label>
+                <input id="modelo" name="modelo" type="text" placeholder="digite o modelo do dispositivo">
+            </div>
+            <div class="grupo">
+                <label for="ram">RAM:</label>
+                <input id="ram" name="ram" type="text" placeholder="digite a quantidade de RAM do dispositivo">
+            </div>
+            <div class="grupo">
+                <label for="armazenamento">Armazenamento:</label>
+                <input id="armazenamento" name="armazenamento" type="text"
+                    placeholder="digite a quantidade de Armazenamento do dispositivo">
+            </div>
+            <div class="grupo">
+                <label for="condicao">Marca:</label>
+                <input id="condicao" name="condicao" type="text" placeholder="digite a condicao do dispositivo">
+            </div>
+            <button id="adicionar-dispositivo" class="botao bto-principal">Adicionar</button>
+        </form>
+    </section>
+    <footer></footer>
+    <!-- Referência JS -->
+    <script src="js/calcula-imc.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/remover-paciente.js"></script>
+    <script src="js/filtra.js"></script>
+    <script src="js/buscar-pacientes.js"></script>
+
+</body>
+
+</html>
