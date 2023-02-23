@@ -8,20 +8,38 @@ body {
 }
 
 header {
-	background: rgb(0,46,52);
-	background: linear-gradient(90deg, rgba(0,46,52,1) 50%, rgba(233,233,233,1) 80%);
+	background: rgb(0, 46, 52);
+	background: linear-gradient(90deg, rgba(0, 46, 52, 1) 50%, rgba(233, 233, 233, 1) 80%);
 	border-bottom: 10px solid #00755c;
-	height: 210px;
+	height: 180px;
 	margin-bottom: 50px;
 	text-align: center;
 }
 
+.caixa-nav {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+	left: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0;
+}
+
 nav a {
 	display: inline;
-	position: relative;
+	position: static;
 	top: 65px;
 	text-transform: uppercase;
-	font-size: 22px;
+	font-size: 18px;
 	text-decoration: none;
 	background-color: aliceblue;
 	color: black;
@@ -125,8 +143,8 @@ button {
 	margin: 0;
 	margin-top: -3px;
 	color: #fff;
-	background-color: #0c8cd3;
-	border-color: #04324c;
+	background-color: #00c16c;
+	border-color: #002e34;
 	width: 20%;
 	display: block;
 	clear: both;
@@ -181,10 +199,10 @@ footer {
 	background: #004443;
 	text-align: center;
 	padding: 80px;
+	color: aliceblue;
 }
 
 .copyright {
-	color: #ffffff;
-	font-size: 13px;
-	margin: 20px 0 0;
+	color: aliceblue;
+	
 }
