@@ -14,8 +14,18 @@ tabela.addEventListener("dblclick", function(event) {
     // mas quem foi clicado foi o <tr> paciente, ou seja,
     // ele consegue especificar quem foi clicado
     event.target.parentNode.classList.add("fadeOut");
+    // se você usado apenas event.target quem seria eliminado
+    // seria apenas a <td>, porém queremos eliminar a <tr>
+    // por isso utilizamos .parentNode que seleciona o pai do <td>,
+    // ou seja, a <tr>
 
+    // nesse acso foi feita uma animação
+    // então ela aplica a <tr> através do classList.add
+    // a classe fadeOut no CSS
+
+    // time setado com atraso de 500 milisegundos
     setTimeout(function() {
+        // remove o paciente
         event.target.parentNode.remove();
     }, 500);
 
