@@ -31,5 +31,5 @@ tabela.addEventListener("dblclick", function(event) {
 
 });
 
-// this. significa a quem o evento está atrelado
-// pode ser usado também
+// this. significa a quem o evento está atrelado,
+// quem está recebendo o evento
