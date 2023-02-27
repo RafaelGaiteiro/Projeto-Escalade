@@ -19,11 +19,13 @@ tabela.addEventListener("dblclick", function(event) {
     // por isso utilizamos .parentNode que seleciona o pai do <td>,
     // ou seja, a <tr>
 
-    // nesse acso foi feita uma animação
+    // nesse caso foi feita uma animação
     // então ela aplica a <tr> através do classList.add
     // a classe fadeOut no CSS
 
     // time setado com atraso de 500 milisegundos
+    // observação: é animação de 500ms foi setada no CSS, porém ela foi setada
+    // aqui também pois se não o Js elimina ela antes de finalizar a animação
     setTimeout(function() {
         // remove o paciente
         event.target.parentNode.remove();
